@@ -1,0 +1,9 @@
+export const SHOW_ALERT = 'ALERT/SHOW_ALERT';
+export const HIDE_ALERT = 'ALERT/HIDE_ALERT';
+
+export const ADD_NOTE = 'NOTES/ADD_NOTE';
+export const REMOVE_NOTE = 'NOTES/REMOVE_NOTE';
+export const FETCH_NOTES = 'NOTES/FETCH_NOTES';
+
+export const SHOW_LOADER = 'LOADER/SHOW_LOADER';
+export const HIDE_LOADER = 'LOADER/HIDE_LOADER';

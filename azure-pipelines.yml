@@ -17,7 +17,7 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
-      npm install --production 
+      npm install 
       npm run build --silent
     displayName: 'Build the app'
 

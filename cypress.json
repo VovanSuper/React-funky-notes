@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:8084",
+  "chromeWebSecurity": false,
+  "port": 8085,
+  "watchForFileChanges": true,
+  "env": {
+    "PORT": 8084
+  },
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  }
+}

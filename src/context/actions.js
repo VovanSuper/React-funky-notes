@@ -1,4 +1,4 @@
-import { HIDE_ALERT, SHOW_ALERT, ADD_NOTE, REMOVE_NOTE, FETCH_NOTES, SHOW_LOADER, HIDE_LOADER } from './types';
+import { HIDE_ALERT, SHOW_ALERT, ADD_NOTE, REMOVE_NOTE, FETCH_NOTES, SHOW_LOADER, HIDE_LOADER, REMOVE_NOTES } from './types';
 
 export function hideAlert() {
   return { type: HIDE_ALERT };
@@ -14,6 +14,9 @@ export function addNote({ title, date, id }) {
 
 export function removeNote({ id }) {
   return { type: REMOVE_NOTE, payload: { id } };
+}
+export function removeNotes() {
+  return { type: REMOVE_NOTES };
 }
 
 export function fetchNotes({ notes }) {

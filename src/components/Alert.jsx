@@ -1,39 +1,33 @@
 import { useContext } from 'react';
-import { Transition } from 'react-transition-group';
+import { Alert, AlertTitle } from '@material-ui/lab';
+import IconButton from '@material-ui/core/IconButton';
+import Zoom from '@material-ui/core/Zoom';
+import CloseIcon from '@material-ui/icons/Close';
+import clsx from 'clsx';
 import alertContext from '../context/alert/alertContext';
 
-const Alert = () => {
+const AlertCmp = () => {
   const { alert, hide } = useContext(alertContext);
+  const alertClasses = clsx('alert', `alert-${alert.type}`);
 
-  const defaultStyle = {
-    opacity: 0,
-    transition: 'opacity 500ms ease-in',
-  };
-  const transitionStyles = {
-    entering: { opacity: 1 },
-    entered: { opacity: 1 },
-    exiting: { opacity: 0 },
-    exited: { opacity: 0 },
-  };
-
+  if (!alert?.type) return null;
   return (
-    <Transition timeout={300} in={alert.visible}>
-      {(state) => (
-        <div
-          style={{ ...defaultStyle, ...transitionStyles[state] }}
-          className={`alert alert-${alert.type || 'warning'} alert-dismissible fade show`}
-          role="alert"
-        >
-          <strong>Внимание!</strong>
-          &nbsp;
-          {alert.title}
-          <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={hide}>
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      )}
-    </Transition>
+    <Zoom in={alert.visible}>
+      <Alert
+        className={alertClasses}
+        variant={alert.type === 'danger' ? 'filled' : 'standard'}
+        severity={alert.type === 'danger' ? 'error' : alert.type}
+        action={
+          <IconButton aria-label="close" color="inherit" size="small" onClick={hide}>
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        }
+      >
+        <AlertTitle>{alert.type}</AlertTitle>
+        {alert.title}
+      </Alert>
+    </Zoom>
   );
 };
 
-export default Alert;
+export default AlertCmp;

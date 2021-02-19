@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-import { addNote, fetchNotes, removeNote } from '../actions';
+import { addNote, fetchNotes, removeNote, removeNotes } from '../actions';
 import NotesContext from './notesContext';
 import notesReducer from './notesReducer';
 
@@ -25,6 +25,12 @@ const NotesProvider = ({ children }) => {
     return id;
   };
 
+  const removeAll = async () => {
+    await axios.delete(`${baseUrl}/notes/.json`);
+    dispatch(removeNotes());
+    return null;
+  };
+
   const fetch = async () => {
     const allNotesFromServerResult = await axios.get(notesUrl);
     const allNotes = Object.entries(allNotesFromServerResult?.data || []).map(([noteKey, noteBody]) => ({ ...noteBody, id: noteKey }));
@@ -32,7 +38,7 @@ const NotesProvider = ({ children }) => {
     return allNotes;
   };
 
-  return <NotesContext.Provider value={{ notes, add, remove, fetch }}>{children}</NotesContext.Provider>;
+  return <NotesContext.Provider value={{ notes, add, remove, removeAll, fetch }}>{children}</NotesContext.Provider>;
 };
 
 NotesProvider.propTypes = {

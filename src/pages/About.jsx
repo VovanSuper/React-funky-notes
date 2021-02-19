@@ -1,10 +1,12 @@
+import Content from '../components/Content';
+
 export default () => (
-  <div className="jumbotron jumbotron-fluid">
-    <div className="container">
-      <h1 className="display-4">Об этом сайте</h1>
-      <p className="lead">
-        Данный сайт предназначен для того, чтобы научиться использовать React, React-Router, React Hooks и React анимации.
-      </p>
+  <Content title="About the Project">
+    <div className="jumbotron jumbotron-fluid">
+      <div className="container">
+        <h1 className="display-4">About this App</h1>
+        <p className="lead">This Application is a simple demonstrator React App</p>
+      </div>
     </div>
-  </div>
+  </Content>
 );

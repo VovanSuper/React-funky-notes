@@ -1,9 +1,9 @@
-const Loader = () => (
-  <div className="m-auto mr-auto col-auto">
-    <div className="spinner-border" role="status">
-      <span className="sr-only">Loading...</span>
-    </div>
-  </div>
-);
+import { Grid, CircularProgress } from '@material-ui/core';
 
-export default Loader;
+export default () => (
+  <Grid>
+    <Grid item>
+      <CircularProgress color="primary" />
+    </Grid>
+  </Grid>
+);

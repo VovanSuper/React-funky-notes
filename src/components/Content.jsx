@@ -70,7 +70,10 @@ const Content = ({ children, title = 'Notes app', deletebtn = false }) => {
         >
           <Grid container justify="space-around" alignItems="center">
             <Grid item>
-              <CardHeader titleTypographyProps={{ variant: 'h3', color: 'secondary', component: 'h1' }} title={title} />
+              <CardHeader
+                titleTypographyProps={{ variant: 'h3', color: 'secondary', component: 'h1', className: 'page-title' }}
+                title={title}
+              />
             </Grid>
             {deletebtn && (
               <Grid item>

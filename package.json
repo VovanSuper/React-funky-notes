@@ -27,7 +27,10 @@
     "start:8084": "cross-env PORT=8084 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy": "cypress open",
+    "cy:run": "cypress run",
+    "test:cy": "start-server-and-test start http://localhost:8084 cy:run"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
@@ -47,6 +50,7 @@
     "web-vitals": "^1.1.0"
   },
   "devDependencies": {
+    "@cypress/instrument-cra": "^1.4.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
@@ -65,8 +69,11 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
-    "sass": "^1.32.7"
+    "sass": "^1.32.7",
+    "start-server-and-test": "^1.12.0",
+    "wait-on": "^5.2.1"
   },
   "browserslist": {
     "production": [

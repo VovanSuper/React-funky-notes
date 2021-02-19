@@ -19,6 +19,6 @@ context('Window', () => {
 
   it('cy.title() - get the title', () => {
     // https://on.cypress.io/title
-    cy.title().should('include', 'Simple Notes');
+    cy.document().title().should('include', 'Funky Notes');
   });
 });

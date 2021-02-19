@@ -30,7 +30,8 @@
     "eject": "react-scripts eject",
     "cy": "cypress open",
     "cy:run": "cypress run",
-    "test:cy": "cross-env BROWSER=none start-server-and-test start http://localhost:8084 cy:run"
+    "test:cy": "cross-env BROWSER=none start-server-and-test start http://localhost:8084 cy:run",
+    "test:cy:ci": "cross-env BROWSER=none START_SERVER_AND_TEST_INSECURE=1 start-server-and-test start https-get://localhost:8084 cy:run"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",

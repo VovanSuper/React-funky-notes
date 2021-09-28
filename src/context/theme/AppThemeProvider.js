@@ -1,8 +1,8 @@
 import React from 'react';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { colors } from '@material-ui/core';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     h1: {
       fontSize: 18,

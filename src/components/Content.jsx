@@ -59,21 +59,10 @@ const Content = ({ children, title = 'Notes app', deletebtn = false }) => {
   return (
     <StyledBox p={2} pt={14}>
       <StyledPaper elevation={24} p={2}>
-        <StyledCard
-          p={2}
-          color={theme.palette.secondary.dark}
-          m={1}
-          display="flex"
-          content="space-around"
-          flexdirection="column"
-          align="center"
-        >
-          <Grid container justify="space-around" alignItems="center">
+        <StyledCard p={2} color={theme.palette.secondary.dark} m={1} display="flex" content="space-around" flexdirection="column" align="center">
+          <Grid container justifyContent="space-around" alignItems="center">
             <Grid item>
-              <CardHeader
-                titleTypographyProps={{ variant: 'h3', color: 'secondary', component: 'h1', className: 'page-title' }}
-                title={title}
-              />
+              <CardHeader titleTypographyProps={{ variant: 'h3', color: 'secondary', component: 'h1', className: 'page-title' }} title={title} />
             </Grid>
             {deletebtn && (
               <Grid item>

@@ -62,9 +62,7 @@ const Notes = () => {
     };
   }, [dataLoaded]);
 
-  return (
-    <div className={listClasses.root}>{loading ? <Loader /> : notes.map((note) => <Note note={note} remove={del} key={note.id} />)}</div>
-  );
+  return <div className={listClasses.root}>{loading ? <Loader /> : notes.map((note) => <Note note={note} remove={del} key={note.id} />)}</div>;
 };
 
 export default Notes;

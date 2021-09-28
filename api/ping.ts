@@ -1,11 +1,10 @@
-import { NowRequest, NowResponse, NowRequestBody, VercelRequestQuery } from '@vercel/node';
+import { VercelRequestQuery, VercelRequest, VercelResponse, VercelRequestBody } from '@vercel/node';
 
-const pingHandler = (request: NowRequest, response: NowResponse) => {
+const pingHandler = (request: VercelRequest, response: VercelResponse) => {
   const { take }: VercelRequestQuery = request.query;
-  const { data = 'to the World' }: NowRequestBody = request.body;
-  console.log({ take });
+  const { data = 'to the World' }: VercelRequestBody = request.body;
 
-  response.status(200).send(`Pong ${data}!`);
+  response.status(200).send(`Pong ${data} to ${take}`);
 };
 
 export default pingHandler;
